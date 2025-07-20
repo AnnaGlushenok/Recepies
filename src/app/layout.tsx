@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Cormorant_Garamond} from "next/font/google";
 import "./globals.css";
 import "./normalize.css";
+import Navbar from "@/components/NavbarComponent/Navbar";
 
 const cormorantGaramond = Cormorant_Garamond({
     variable: "--font-cormorant-garamond",
@@ -24,7 +25,12 @@ export default function RootLayout({
         <body
             className={`${cormorantGaramond.variable}  antialiased min-h-screen`}
         >
-        {children}
+        <header>
+            <Navbar/>
+        </header>
+        <main>
+            {children}
+        </main>
         </body>
         </html>
     );

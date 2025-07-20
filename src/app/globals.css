@@ -1,0 +1,9 @@
+:root {
+    --font: 'Cormorant Garamond';
+    --main-color: #D4A200;
+}
+
+body {
+    font-family: var(--font), serif;
+    font-weight: 300;
+}

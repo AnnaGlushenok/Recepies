@@ -3,16 +3,11 @@ import style from "./style.module.css"
 import {RecipeController} from "@/data/RecipeController";
 import logo from "../../../../public/images/logo.svg";
 import Link from "next/link";
+import {RecipeType} from "@/types/RecipeType";
 
-const recipeController = new RecipeController();
-
-interface RecipePageProps  {
-    params: { id: string };
-}
-
-export default function Receipt({params}: RecipePageProps ) {
-    const {id} = params;
-    const recipe = recipeController.getById(+id)
+export default async function Receipt({params}: { params: Promise<{ id: string }> }) {
+    const {id} = await params;
+    const recipe: RecipeType | undefined = new RecipeController().getById(+id);
     if (!recipe)
         return <p>Рецепт ещё не придумали(</p>;
 

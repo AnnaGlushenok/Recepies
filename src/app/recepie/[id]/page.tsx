@@ -6,11 +6,11 @@ import Link from "next/link";
 
 const recipeController = new RecipeController();
 
-interface Recipe {
+interface RecipePageProps  {
     params: { id: string };
 }
 
-export default function Receipt({params}: Recipe) {
+export default function Receipt({params}: RecipePageProps ) {
     const {id} = params;
     const recipe = recipeController.getById(+id)
     if (!recipe)

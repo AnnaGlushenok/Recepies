@@ -1,11 +1,6 @@
-import Card from "@/components/CardComponent/Card";
+'use client';
+import Main from "@/components/MainComponent/Main";
 
 export default function Home() {
-    return (
-        <div>
-            <Card/>
-            <Card/>
-        </div>
-
-    );
+    return <Main/>;
 }

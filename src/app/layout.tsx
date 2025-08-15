@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import {Cormorant_Garamond} from "next/font/google";
 import "./globals.css";
 import "./normalize.css";
-import Navbar from "@/components/NavbarComponent/Navbar";
 
 const cormorantGaramond = Cormorant_Garamond({
     variable: "--font-cormorant-garamond",
@@ -15,22 +14,11 @@ export const metadata: Metadata = {
     description: "Мои рецептики, чтобы вкусно кушать",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang="ru">
-        <body
-            className={`${cormorantGaramond.variable}  antialiased min-h-screen`}
-        >
-        <header>
-            <Navbar/>
-        </header>
-        <main>
-            {children}
-        </main>
+        <body className={`${cormorantGaramond.variable}  antialiased min-h-screen`}>
+        {children}
         </body>
         </html>
     );

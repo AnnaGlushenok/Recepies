@@ -1,7 +1,9 @@
-export type ReceiptType = {
+export type RecipeType = {
     id: number,
-    name: string;
+    category_id: number,
+    name: string,
     imgPath: string,
     ingredients: { name: string, amount: string }[],
     technology: { item: string }[],
+    notes?: string,
 };

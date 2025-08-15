@@ -37,6 +37,9 @@
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
     background: var(--main-color);
     color: white;
     border: none;
@@ -45,4 +48,3 @@
     font-size: 18px;
     font-weight: 600;
 }
-

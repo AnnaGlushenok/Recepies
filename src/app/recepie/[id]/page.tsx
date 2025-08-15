@@ -1,23 +1,21 @@
 import Image from "next/image";
 import style from "./style.module.css"
 import {RecipeController} from "@/data/RecipeController";
-import Navbar from "@/components/NavbarComponent/Navbar";
 import logo from "../../../../public/images/logo.svg";
 import Link from "next/link";
 
 const recipeController = new RecipeController();
 
-interface recipe {
+interface Recipe {
     params: { id: string };
 }
 
-export default function Receipt({params}: recipe) {
+export default function Receipt({params}: Recipe) {
     const {id} = params;
     const recipe = recipeController.getById(+id)
     if (!recipe)
         return <p>Рецепт ещё не придумали(</p>;
-    console.log("recipe.notes");
-    console.log(recipe.notes);
+
     return (
         <div>
             <header>

@@ -8,6 +8,7 @@ import {RecipeType} from "@/types/RecipeType";
 export default async function Receipt({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params;
     const recipe: RecipeType | undefined = new RecipeController().getById(+id);
+
     if (!recipe)
         return <p>Рецепт ещё не придумали(</p>;
 
